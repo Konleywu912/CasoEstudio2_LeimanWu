@@ -33,7 +33,6 @@ public class ListaAlquileres {
 
     }
 
-    // Insertar al final
     public void insertarFinal(Alquiler a) {
         Nodo nuevo = new Nodo(a);
         if (head == null) {
@@ -47,7 +46,6 @@ public class ListaAlquileres {
         }
     }
 
-    // Insertar en una posición específica
     public void insertarMedio(Alquiler a, int pos) {
         if (pos <= 0 || head == null) {
             insertarInicio(a);
@@ -67,7 +65,6 @@ public class ListaAlquileres {
         aux.setSiguiente(nuevo);
     }
 
-    // Mostrar todos los alquileres
     public void mostrar() {
         if (head == null) {
             JOptionPane.showMessageDialog(null, "No hay registros");
@@ -80,12 +77,10 @@ public class ListaAlquileres {
             System.out.println("Vehículo: " + a.getCarro().getMarca() + " " + a.getCarro().getModelo() + ", Placa: " + a.getCarro().getPlaca());
             System.out.println("Cliente: " + a.getPersona().getNombre() + ", ID: " + a.getPersona().getId());
             System.out.println("Alquiler: " + a.getFechaAlquiler() + " | Devolución: " + a.getFechaDevolucion());
-            System.out.println("------------------------------------");
             aux = aux.getSiguiente();
         }
     }
 
-    // Buscar el alquiler más reciente (último en la lista)
     public Alquiler buscarMasNuevo() {
         if (head == null) {
             return null;
@@ -98,7 +93,7 @@ public class ListaAlquileres {
         return aux.getDato();
     }
 
-    // Eliminar por placa (opcional)
+
     public void eliminar(String placa) {
         if (head == null) {
             return;
@@ -119,3 +114,4 @@ public class ListaAlquileres {
         }
     }
 }
+
